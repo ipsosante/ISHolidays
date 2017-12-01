@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F083F7E51FD1B0A5001F159E /* ISHolidays.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F7E41FD1B0A5001F159E /* ISHolidays.m */; };
+		F083F7E61FD1B0A5001F159E /* ISHolidays.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F083F7E31FD1B0A5001F159E /* ISHolidays.h */; };
+		F083F7F31FD1B0C7001F159E /* ISHolidaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F7F21FD1B0C7001F159E /* ISHolidaysTests.m */; };
+		F083F7F51FD1B0C7001F159E /* libISHolidays.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F083F7E01FD1B0A5001F159E /* libISHolidays.a */; };
+		F083F7FD1FD1B49F001F159E /* NSDate+ISHolidays.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F7FC1FD1B49F001F159E /* NSDate+ISHolidays.m */; };
+		F083F8011FD1BCD1001F159E /* ISEaster.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F8001FD1BCD1001F159E /* ISEaster.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F083F7F61FD1B0C7001F159E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F083F7D81FD1B0A5001F159E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F083F7DF1FD1B0A5001F159E;
+			remoteInfo = ISHolidays;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F083F7DE1FD1B0A5001F159E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				F083F7E61FD1B0A5001F159E /* ISHolidays.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F083F7E01FD1B0A5001F159E /* libISHolidays.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libISHolidays.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F083F7E31FD1B0A5001F159E /* ISHolidays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISHolidays.h; sourceTree = "<group>"; };
+		F083F7E41FD1B0A5001F159E /* ISHolidays.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISHolidays.m; sourceTree = "<group>"; };
+		F083F7F01FD1B0C7001F159E /* ISHolidaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISHolidaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F083F7F21FD1B0C7001F159E /* ISHolidaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISHolidaysTests.m; sourceTree = "<group>"; };
+		F083F7F41FD1B0C7001F159E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F083F7FB1FD1B49F001F159E /* NSDate+ISHolidays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISHolidays.h"; sourceTree = "<group>"; };
+		F083F7FC1FD1B49F001F159E /* NSDate+ISHolidays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISHolidays.m"; sourceTree = "<group>"; };
+		F083F7FE1FD1B505001F159E /* ISHolidays.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ISHolidays.xcconfig; sourceTree = "<group>"; };
+		F083F7FF1FD1BCD1001F159E /* ISEaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISEaster.h; sourceTree = "<group>"; };
+		F083F8001FD1BCD1001F159E /* ISEaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISEaster.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F083F7DD1FD1B0A5001F159E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F083F7ED1FD1B0C7001F159E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F083F7F51FD1B0C7001F159E /* libISHolidays.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F083F7D71FD1B0A5001F159E = {
+			isa = PBXGroup;
+			children = (
+				F083F7E21FD1B0A5001F159E /* ISHolidays */,
+				F083F7F11FD1B0C7001F159E /* ISHolidaysTests */,
+				F083F7E11FD1B0A5001F159E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F083F7E11FD1B0A5001F159E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F083F7E01FD1B0A5001F159E /* libISHolidays.a */,
+				F083F7F01FD1B0C7001F159E /* ISHolidaysTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F083F7E21FD1B0A5001F159E /* ISHolidays */ = {
+			isa = PBXGroup;
+			children = (
+				F083F7FE1FD1B505001F159E /* ISHolidays.xcconfig */,
+				F083F7FF1FD1BCD1001F159E /* ISEaster.h */,
+				F083F8001FD1BCD1001F159E /* ISEaster.m */,
+				F083F7E31FD1B0A5001F159E /* ISHolidays.h */,
+				F083F7E41FD1B0A5001F159E /* ISHolidays.m */,
+				F083F7FB1FD1B49F001F159E /* NSDate+ISHolidays.h */,
+				F083F7FC1FD1B49F001F159E /* NSDate+ISHolidays.m */,
+			);
+			path = ISHolidays;
+			sourceTree = "<group>";
+		};
+		F083F7F11FD1B0C7001F159E /* ISHolidaysTests */ = {
+			isa = PBXGroup;
+			children = (
+				F083F7F21FD1B0C7001F159E /* ISHolidaysTests.m */,
+				F083F7F41FD1B0C7001F159E /* Info.plist */,
+			);
+			path = ISHolidaysTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F083F7DF1FD1B0A5001F159E /* ISHolidays */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F083F7E91FD1B0A5001F159E /* Build configuration list for PBXNativeTarget "ISHolidays" */;
+			buildPhases = (
+				F083F7DC1FD1B0A5001F159E /* Sources */,
+				F083F7DD1FD1B0A5001F159E /* Frameworks */,
+				F083F7DE1FD1B0A5001F159E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ISHolidays;
+			productName = ISHolidays;
+			productReference = F083F7E01FD1B0A5001F159E /* libISHolidays.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F083F7EF1FD1B0C7001F159E /* ISHolidaysTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F083F7F81FD1B0C7001F159E /* Build configuration list for PBXNativeTarget "ISHolidaysTests" */;
+			buildPhases = (
+				F083F7EC1FD1B0C7001F159E /* Sources */,
+				F083F7ED1FD1B0C7001F159E /* Frameworks */,
+				F083F7EE1FD1B0C7001F159E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F083F7F71FD1B0C7001F159E /* PBXTargetDependency */,
+			);
+			name = ISHolidaysTests;
+			productName = ISHolidaysTests;
+			productReference = F083F7F01FD1B0C7001F159E /* ISHolidaysTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F083F7D81FD1B0A5001F159E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "ipso santé";
+				TargetAttributes = {
+					F083F7DF1FD1B0A5001F159E = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					F083F7EF1FD1B0C7001F159E = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F083F7DB1FD1B0A5001F159E /* Build configuration list for PBXProject "ISHolidays" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F083F7D71FD1B0A5001F159E;
+			productRefGroup = F083F7E11FD1B0A5001F159E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F083F7DF1FD1B0A5001F159E /* ISHolidays */,
+				F083F7EF1FD1B0C7001F159E /* ISHolidaysTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F083F7EE1FD1B0C7001F159E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F083F7DC1FD1B0A5001F159E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F083F7E51FD1B0A5001F159E /* ISHolidays.m in Sources */,
+				F083F8011FD1BCD1001F159E /* ISEaster.m in Sources */,
+				F083F7FD1FD1B49F001F159E /* NSDate+ISHolidays.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F083F7EC1FD1B0C7001F159E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F083F7F31FD1B0C7001F159E /* ISHolidaysTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F083F7F71FD1B0C7001F159E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F083F7DF1FD1B0A5001F159E /* ISHolidays */;
+			targetProxy = F083F7F61FD1B0C7001F159E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F083F7E71FD1B0A5001F159E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F083F7FE1FD1B505001F159E /* ISHolidays.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F083F7E81FD1B0A5001F159E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F083F7FE1FD1B505001F159E /* ISHolidays.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F083F7EA1FD1B0A5001F159E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F083F7EB1FD1B0A5001F159E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F083F7F91FD1B0C7001F159E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ISHolidaysTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ipsosante.ISHolidaysTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F083F7FA1FD1B0C7001F159E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ISHolidaysTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ipsosante.ISHolidaysTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F083F7DB1FD1B0A5001F159E /* Build configuration list for PBXProject "ISHolidays" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F083F7E71FD1B0A5001F159E /* Debug */,
+				F083F7E81FD1B0A5001F159E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F083F7E91FD1B0A5001F159E /* Build configuration list for PBXNativeTarget "ISHolidays" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F083F7EA1FD1B0A5001F159E /* Debug */,
+				F083F7EB1FD1B0A5001F159E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F083F7F81FD1B0C7001F159E /* Build configuration list for PBXNativeTarget "ISHolidaysTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F083F7F91FD1B0C7001F159E /* Debug */,
+				F083F7FA1FD1B0C7001F159E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F083F7D81FD1B0A5001F159E /* Project object */;
+}
