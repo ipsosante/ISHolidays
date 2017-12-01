@@ -1,0 +1,5 @@
+language: objective-c
+xcode_project: ISHolidays.xcodeproj
+xcode_scheme: ISHolidaysTest
+script:
+    - xcodebuild clean build-for-testing test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPad Air 2,OS=10.3.1' -project ISHolidays.xcodeproj -scheme ISHolidays CODE_SIGNING_REQUIRED=NO
