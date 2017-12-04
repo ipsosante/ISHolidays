@@ -8,12 +8,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, ISEasterCalculationMethod) {
-    ISEasterCalculationMethodJulian = 1,
-    ISEasterCalculationMethodOrthodox = 2,
-    ISEasterCalculationMethodWestern = 3,
-};
-
 /// This class offers a generic easter computing method for any given year
 @interface ISEaster : NSObject
 
