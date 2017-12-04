@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ipsosante/ISHolidays.svg?branch=master)](https://travis-ci.org/ipsosante/ISHolidays)
+
 # ISHolidays
 
 Holidays calculations for NSDate.
