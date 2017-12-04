@@ -1,21 +1,23 @@
 
 #import <XCTest/XCTest.h>
 
-#import "NSDate+ISHolidays.h"
+#import "ISHolidays.h"
 
-@interface ISHolidaysTests : XCTestCase
+@interface ISHolidaysFRTests : XCTestCase
 
+@property (strong, nonatomic) NSLocale *locale;
 @property (strong, nonatomic) NSCalendar *calendar;
 @property (strong, nonatomic) NSDateComponents *dateComponents;
 
 @end
 
-@implementation ISHolidaysTests
+@implementation ISHolidaysFRTests
 
 - (void)setUp
 {
     [super setUp];
 
+    self.locale = [NSLocale localeWithLocaleIdentifier:@"FR_fr"];
     self.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
     self.dateComponents = [[NSDateComponents alloc] init];
 }
@@ -28,9 +30,9 @@
     NSDate *regularDay = [self.calendar dateFromComponents:self.dateComponents];
 
     [self measureBlock:^{
-        for (NSInteger i = 0; i < 1000; i++)
+        for (NSInteger i = 0; i < 500; i++)
         {
-            XCTAssertFalse([regularDay isHoliday]);
+            XCTAssertNil([ISHolidays holidayNameForDate:regularDay inLocale:self.locale]);
         }
     }];
 }
@@ -44,7 +46,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Nouvel An");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Nouvel An");
 }
 
 - (void)testNewYear2018
@@ -54,7 +56,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Nouvel An");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Nouvel An");
 }
 
 - (void)testNewYear2040
@@ -64,7 +66,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Nouvel An");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Nouvel An");
 }
 
 - (void)testInvalidNewYearMonth
@@ -74,7 +76,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidNewYearDay
@@ -84,7 +86,7 @@
     self.dateComponents.day = 4;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - Easter Monday
@@ -96,7 +98,7 @@
     self.dateComponents.day = 17;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Lundi de Pâques");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pâques");
 }
 
 - (void)testEasterMonday2018
@@ -106,7 +108,7 @@
     self.dateComponents.day = 2;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Lundi de Pâques");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pâques");
 }
 
 - (void)testEasterMonday2019
@@ -116,7 +118,7 @@
     self.dateComponents.day = 22;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Lundi de Pâques");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pâques");
 }
 
 - (void)testEasterMonday2040
@@ -126,7 +128,7 @@
     self.dateComponents.day = 2;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Lundi de Pâques");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pâques");
 }
 
 - (void)testInvalidEasterMonday2017
@@ -136,7 +138,7 @@
     self.dateComponents.day = 2;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidEasterMonday2018
@@ -146,7 +148,7 @@
     self.dateComponents.day = 22;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - Labour Day
@@ -158,7 +160,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête du Travail");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête du Travail");
 }
 
 - (void)testLabourDay2018
@@ -168,7 +170,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête du Travail");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête du Travail");
 }
 
 - (void)testLabourDay2019
@@ -178,7 +180,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête du Travail");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête du Travail");
 }
 
 - (void)testLabourDay2040
@@ -188,7 +190,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête du Travail");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête du Travail");
 }
 
 - (void)testInvalidLabourDay2017
@@ -198,7 +200,7 @@
     self.dateComponents.day = 30;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidLabourDay2018
@@ -208,7 +210,7 @@
     self.dateComponents.day = 2;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - Victory Day
@@ -220,7 +222,7 @@
     self.dateComponents.day = 8;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête de la Victoire");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête de la Victoire");
 }
 
 - (void)testVictoryDay2018
@@ -230,7 +232,7 @@
     self.dateComponents.day = 8;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête de la Victoire");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête de la Victoire");
 }
 
 - (void)testVictoryDay2019
@@ -240,7 +242,7 @@
     self.dateComponents.day = 8;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête de la Victoire");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête de la Victoire");
 }
 
 - (void)testVictoryDay2040
@@ -250,7 +252,7 @@
     self.dateComponents.day = 8;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête de la Victoire");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête de la Victoire");
 }
 
 - (void)testInvalidVictoryDay2017
@@ -260,7 +262,7 @@
     self.dateComponents.day = 8;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidVictoryDay2018
@@ -270,7 +272,7 @@
     self.dateComponents.day = 28;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - Feast of the Ascension
@@ -282,7 +284,7 @@
     self.dateComponents.day = 25;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Jeudi de l'Ascension");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Jeudi de l'Ascension");
 }
 
 - (void)testFeastOfTheAscension2018
@@ -292,7 +294,7 @@
     self.dateComponents.day = 10;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Jeudi de l'Ascension");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Jeudi de l'Ascension");
 }
 
 - (void)testFeastOfTheAscension2019
@@ -302,7 +304,7 @@
     self.dateComponents.day = 30;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Jeudi de l'Ascension");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Jeudi de l'Ascension");
 }
 
 - (void)testFeastOfTheAscension2040
@@ -312,7 +314,7 @@
     self.dateComponents.day = 10;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Jeudi de l'Ascension");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Jeudi de l'Ascension");
 }
 
 - (void)testInvalidFeastOfTheAscension2017
@@ -322,7 +324,7 @@
     self.dateComponents.day = 24;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidFeastOfTheAscension2040
@@ -332,7 +334,7 @@
     self.dateComponents.day = 25;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - Whit Monday
@@ -344,7 +346,7 @@
     self.dateComponents.day = 5;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Lundi de Pentecôte");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pentecôte");
 }
 
 - (void)testWhitMonday2018
@@ -354,7 +356,7 @@
     self.dateComponents.day = 21;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Lundi de Pentecôte");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pentecôte");
 }
 
 - (void)testWhitMonday2019
@@ -364,7 +366,7 @@
     self.dateComponents.day = 10;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Lundi de Pentecôte");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pentecôte");
 }
 
 - (void)testWhitMonday2040
@@ -374,7 +376,7 @@
     self.dateComponents.day = 21;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Lundi de Pentecôte");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pentecôte");
 }
 
 - (void)testInvalidWhitMonday2017
@@ -384,7 +386,7 @@
     self.dateComponents.day = 4;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidWhitMonday2018
@@ -394,7 +396,7 @@
     self.dateComponents.day = 5;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - Bastille Day
@@ -406,7 +408,7 @@
     self.dateComponents.day = 14;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête Nationale Française");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête Nationale Française");
 }
 
 - (void)testBastilleDay2018
@@ -416,7 +418,7 @@
     self.dateComponents.day = 14;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête Nationale Française");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête Nationale Française");
 }
 
 - (void)testBastilleDay2019
@@ -426,7 +428,7 @@
     self.dateComponents.day = 14;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête Nationale Française");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête Nationale Française");
 }
 
 - (void)testBastilleDay2040
@@ -436,7 +438,7 @@
     self.dateComponents.day = 14;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Fête Nationale Française");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête Nationale Française");
 }
 
 - (void)testInvalidBastilleDay2017
@@ -446,7 +448,7 @@
     self.dateComponents.day = 15;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidBastilleDay2018
@@ -456,7 +458,7 @@
     self.dateComponents.day = 14;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - Assumption of Mary
@@ -468,7 +470,7 @@
     self.dateComponents.day = 15;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Assomption");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Assomption");
 }
 
 - (void)testAssumptionOfMary2018
@@ -478,7 +480,7 @@
     self.dateComponents.day = 15;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Assomption");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Assomption");
 }
 
 - (void)testAssumptionOfMary2019
@@ -488,7 +490,7 @@
     self.dateComponents.day = 15;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Assomption");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Assomption");
 }
 
 - (void)testAssumptionOfMary2040
@@ -498,7 +500,7 @@
     self.dateComponents.day = 15;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Assomption");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Assomption");
 }
 
 - (void)testInvalidAssumptionOfMary2017
@@ -508,7 +510,7 @@
     self.dateComponents.day = 14;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidAssumptionOfMary2018
@@ -518,7 +520,7 @@
     self.dateComponents.day = 15;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - All Saints' Day
@@ -530,7 +532,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Toussaint");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Toussaint");
 }
 
 - (void)testAllSaintsDay2018
@@ -540,7 +542,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Toussaint");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Toussaint");
 }
 
 - (void)testAllSaintsDay2019
@@ -550,7 +552,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Toussaint");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Toussaint");
 }
 
 - (void)testAllSaintsDay2040
@@ -560,7 +562,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Toussaint");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Toussaint");
 }
 
 - (void)testInvalidAllSaintsDay2017
@@ -570,7 +572,7 @@
     self.dateComponents.day = 2;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidAllSaintsDay2019
@@ -580,7 +582,7 @@
     self.dateComponents.day = 1;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - Armistice of November 11th, 1918
@@ -592,7 +594,7 @@
     self.dateComponents.day = 11;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Armistice de 1918");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Armistice de 1918");
 }
 
 - (void)test1918Armistice2018
@@ -602,7 +604,7 @@
     self.dateComponents.day = 11;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Armistice de 1918");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Armistice de 1918");
 }
 
 - (void)test1918Armistice2019
@@ -612,7 +614,7 @@
     self.dateComponents.day = 11;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Armistice de 1918");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Armistice de 1918");
 }
 
 - (void)test1918Armistice2040
@@ -622,7 +624,7 @@
     self.dateComponents.day = 11;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Armistice de 1918");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Armistice de 1918");
 }
 
 - (void)testInvalid1918Armistice2017
@@ -632,7 +634,7 @@
     self.dateComponents.day = 11;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalid1918Armistice2018
@@ -642,7 +644,7 @@
     self.dateComponents.day = 12;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 #pragma mark - Christmas
@@ -654,7 +656,7 @@
     self.dateComponents.day = 25;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Noël");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Noël");
 }
 
 - (void)testChristmas2018
@@ -664,7 +666,7 @@
     self.dateComponents.day = 25;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Noël");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Noël");
 }
 
 - (void)testChristmas2019
@@ -674,7 +676,7 @@
     self.dateComponents.day = 25;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Noël");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Noël");
 }
 
 - (void)testChristmas2040
@@ -684,7 +686,7 @@
     self.dateComponents.day = 25;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertEqualObjects([date localizedHolidayName], @"Noël");
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Noël");
 }
 
 - (void)testInvalidChristmas2017
@@ -694,7 +696,7 @@
     self.dateComponents.day = 25;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
-    XCTAssertNil([date localizedHolidayName]);
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
 - (void)testInvalidChristmas2018
@@ -703,9 +705,8 @@
     self.dateComponents.month = 12;
     self.dateComponents.day = 24;
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
-
-    XCTAssertNil([date localizedHolidayName]);
+    
+    XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
-
 
 @end

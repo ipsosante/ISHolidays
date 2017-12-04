@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		F083F7E51FD1B0A5001F159E /* ISHolidays.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F7E41FD1B0A5001F159E /* ISHolidays.m */; };
 		F083F7E61FD1B0A5001F159E /* ISHolidays.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F083F7E31FD1B0A5001F159E /* ISHolidays.h */; };
-		F083F7F31FD1B0C7001F159E /* ISHolidaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F7F21FD1B0C7001F159E /* ISHolidaysTests.m */; };
 		F083F7F51FD1B0C7001F159E /* libISHolidays.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F083F7E01FD1B0A5001F159E /* libISHolidays.a */; };
 		F083F7FD1FD1B49F001F159E /* NSDate+ISHolidays.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F7FC1FD1B49F001F159E /* NSDate+ISHolidays.m */; };
 		F083F8011FD1BCD1001F159E /* ISEaster.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F8001FD1BCD1001F159E /* ISEaster.m */; };
+		F0DCC52D1FD5B59400C107A0 /* ISHolidaysFRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DCC52C1FD5B59400C107A0 /* ISHolidaysFRTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,13 +43,13 @@
 		F083F7E31FD1B0A5001F159E /* ISHolidays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISHolidays.h; sourceTree = "<group>"; };
 		F083F7E41FD1B0A5001F159E /* ISHolidays.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISHolidays.m; sourceTree = "<group>"; };
 		F083F7F01FD1B0C7001F159E /* ISHolidaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISHolidaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F083F7F21FD1B0C7001F159E /* ISHolidaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISHolidaysTests.m; sourceTree = "<group>"; };
 		F083F7F41FD1B0C7001F159E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F083F7FB1FD1B49F001F159E /* NSDate+ISHolidays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISHolidays.h"; sourceTree = "<group>"; };
 		F083F7FC1FD1B49F001F159E /* NSDate+ISHolidays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISHolidays.m"; sourceTree = "<group>"; };
 		F083F7FE1FD1B505001F159E /* ISHolidays.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ISHolidays.xcconfig; sourceTree = "<group>"; };
 		F083F7FF1FD1BCD1001F159E /* ISEaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISEaster.h; sourceTree = "<group>"; };
 		F083F8001FD1BCD1001F159E /* ISEaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISEaster.m; sourceTree = "<group>"; };
+		F0DCC52C1FD5B59400C107A0 /* ISHolidaysFRTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHolidaysFRTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 		F083F7F11FD1B0C7001F159E /* ISHolidaysTests */ = {
 			isa = PBXGroup;
 			children = (
-				F083F7F21FD1B0C7001F159E /* ISHolidaysTests.m */,
+				F0DCC52C1FD5B59400C107A0 /* ISHolidaysFRTests.m */,
 				F083F7F41FD1B0C7001F159E /* Info.plist */,
 			);
 			path = ISHolidaysTests;
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F083F7F31FD1B0C7001F159E /* ISHolidaysTests.m in Sources */,
+				F0DCC52D1FD5B59400C107A0 /* ISHolidaysFRTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
