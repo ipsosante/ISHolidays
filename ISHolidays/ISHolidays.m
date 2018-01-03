@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_END
     @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:reason userInfo:nil];
 #endif
 
-    return NO;
+    return nil;
 }
 
 @end
