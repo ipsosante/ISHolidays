@@ -1,6 +1,7 @@
 
 #import "ISHolidays.h"
 #import "ISEaster.h"
+#import "NSDate+ISHolidays.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -61,7 +62,7 @@ NS_ASSUME_NONNULL_END
     // Easter Monday
     NSInteger monday = 2;
     NSDate *easterNextMonday = [calendar nextDateAfterDate:easter matchingUnit:NSCalendarUnitWeekday value:monday options:NSCalendarMatchStrictly];
-    if (year > 1886 && [date isEqualToDate:easterNextMonday])
+    if (year > 1886 && [date checkEqualityWithoutTimeWith:easterNextMonday])
     {
         return @"Lundi de Pâques";
     }
@@ -80,14 +81,14 @@ NS_ASSUME_NONNULL_END
 
     // Feast of the Ascension
     NSDate *ascension = [calendar dateByAddingUnit:NSCalendarUnitDay value:39 toDate:easter options:0];
-    if (year >= 1802 && [date isEqualToDate:ascension])
+    if (year >= 1802 && [date checkEqualityWithoutTimeWith:ascension])
     {
         return @"Jeudi de l'Ascension";
     }
 
     // Whit Monday (Pentecost Monday)
     NSDate *pentecost = [calendar dateByAddingUnit:NSCalendarUnitDay value:50 toDate:easter options:0];
-    if (year > 1886 && [date isEqualToDate:pentecost])
+    if (year > 1886 && [date checkEqualityWithoutTimeWith:pentecost])
     {
         return @"Lundi de Pentecôte";
     }
