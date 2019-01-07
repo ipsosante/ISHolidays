@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21D3679521E3652C00EF5AC8 /* NSDate+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3679421E3652B00EF5AC8 /* NSDate+Compare.m */; };
 		F083F7E51FD1B0A5001F159E /* ISHolidays.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F7E41FD1B0A5001F159E /* ISHolidays.m */; };
 		F083F7E61FD1B0A5001F159E /* ISHolidays.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F083F7E31FD1B0A5001F159E /* ISHolidays.h */; };
 		F083F7F51FD1B0C7001F159E /* libISHolidays.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F083F7E01FD1B0A5001F159E /* libISHolidays.a */; };
@@ -39,6 +40,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		21D3679321E3652B00EF5AC8 /* NSDate+Compare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Compare.h"; sourceTree = "<group>"; };
+		21D3679421E3652B00EF5AC8 /* NSDate+Compare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Compare.m"; sourceTree = "<group>"; };
 		F083F7E01FD1B0A5001F159E /* libISHolidays.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libISHolidays.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F083F7E31FD1B0A5001F159E /* ISHolidays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISHolidays.h; sourceTree = "<group>"; };
 		F083F7E41FD1B0A5001F159E /* ISHolidays.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISHolidays.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				F083F7E41FD1B0A5001F159E /* ISHolidays.m */,
 				F083F7FB1FD1B49F001F159E /* NSDate+ISHolidays.h */,
 				F083F7FC1FD1B49F001F159E /* NSDate+ISHolidays.m */,
+				21D3679321E3652B00EF5AC8 /* NSDate+Compare.h */,
+				21D3679421E3652B00EF5AC8 /* NSDate+Compare.m */,
 			);
 			path = ISHolidays;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D3679521E3652C00EF5AC8 /* NSDate+Compare.m in Sources */,
 				F083F7E51FD1B0A5001F159E /* ISHolidays.m in Sources */,
 				F083F8011FD1BCD1001F159E /* ISEaster.m in Sources */,
 				F083F7FD1FD1B49F001F159E /* NSDate+ISHolidays.m in Sources */,

@@ -37,6 +37,23 @@
     }];
 }
 
+- (void)testWorstCasePerformanceWithTime
+{
+    self.dateComponents.year = 2017;
+    self.dateComponents.month = 12;
+    self.dateComponents.day = 1;
+    self.dateComponents.hour = 9;
+    NSDate *regularDay = [self.calendar dateFromComponents:self.dateComponents];
+    
+    [self measureBlock:^{
+        for (NSInteger i = 0; i < 500; i++)
+        {
+            XCTAssertNil([ISHolidays holidayNameForDate:regularDay inLocale:self.locale]);
+        }
+    }];
+}
+
+
 #pragma mark - New Year
 
 - (void)testNewYear2017
@@ -87,6 +104,17 @@
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
+}
+
+- (void)testNewYearWithTime
+{
+    self.dateComponents.year = 2017;
+    self.dateComponents.month = 1;
+    self.dateComponents.day = 1;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Nouvel An");
 }
 
 #pragma mark - Easter Monday
@@ -151,6 +179,18 @@
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
+- (void)testEasterMondayWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 4;
+    self.dateComponents.day = 22;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pâques");
+}
+
+
 #pragma mark - Labour Day
 
 - (void)testLabourDay2017
@@ -211,6 +251,17 @@
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
+}
+
+- (void)testLabourDayWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 5;
+    self.dateComponents.day = 1;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête du Travail");
 }
 
 #pragma mark - Victory Day
@@ -275,6 +326,17 @@
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
+- (void)testVictoryDayWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 5;
+    self.dateComponents.day = 8;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête de la Victoire");
+}
+
 #pragma mark - Feast of the Ascension
 
 - (void)testFeastOfTheAscension2017
@@ -335,6 +397,17 @@
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
+}
+
+- (void)testFeastOfTheAscensionWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 5;
+    self.dateComponents.day = 30;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Jeudi de l'Ascension");
 }
 
 #pragma mark - Whit Monday
@@ -399,6 +472,17 @@
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
+- (void)testWhitMondayWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 6;
+    self.dateComponents.day = 10;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Lundi de Pentecôte");
+}
+
 #pragma mark - Bastille Day
 
 - (void)testBastilleDay2017
@@ -459,6 +543,17 @@
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
+}
+
+- (void)testBastilleDayWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 7;
+    self.dateComponents.day = 14;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête Nationale Française");
 }
 
 #pragma mark - Assumption of Mary
@@ -523,6 +618,17 @@
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
+- (void)testAssumptionOfMaryWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 8;
+    self.dateComponents.day = 15;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Assomption");
+}
+
 #pragma mark - All Saints' Day
 
 - (void)testAllSaintsDay2017
@@ -583,6 +689,17 @@
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
 
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
+}
+
+- (void)testAllSaintsDayWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 11;
+    self.dateComponents.day = 1;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Toussaint");
 }
 
 #pragma mark - Armistice of November 11th, 1918
@@ -647,6 +764,17 @@
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
+- (void)test1918ArmisticeWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 11;
+    self.dateComponents.day = 11;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Armistice de 1918");
+}
+
 #pragma mark - Christmas
 
 - (void)testChristmas2017
@@ -707,6 +835,17 @@
     NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
     
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
+}
+
+- (void)testChristmasWithTime
+{
+    self.dateComponents.year = 2019;
+    self.dateComponents.month = 12;
+    self.dateComponents.day = 25;
+    self.dateComponents.hour = 9;
+    NSDate *date = [self.calendar dateFromComponents:self.dateComponents];
+    
+    XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Noël");
 }
 
 @end
