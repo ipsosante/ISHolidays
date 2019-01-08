@@ -1,7 +1,6 @@
 
 #import "ISHolidays.h"
 #import "ISEaster.h"
-#import "NSDate+ISHolidays.h"
 #import "NSDate+Compare.h"
 
 NS_ASSUME_NONNULL_BEGIN
