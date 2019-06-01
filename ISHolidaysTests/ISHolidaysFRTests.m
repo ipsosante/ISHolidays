@@ -17,7 +17,7 @@
 {
     [super setUp];
 
-    self.locale = [NSLocale localeWithLocaleIdentifier:@"FR_fr"];
+    self.locale = [NSLocale localeWithLocaleIdentifier:@"fr_FR"];
     self.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
     self.dateComponents = [[NSDateComponents alloc] init];
 }
