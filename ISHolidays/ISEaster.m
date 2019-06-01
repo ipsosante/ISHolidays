@@ -3,7 +3,7 @@
 
 @implementation ISEaster
 
-+ (NSDate *)easterForYear:(NSInteger)year
++ (nullable NSDate *)easterForYear:(NSInteger)year inCalendar:(NSCalendar *)calendar
 {
     // g = Golden year - 1
     NSInteger g = year % 19;
@@ -33,7 +33,7 @@
     easterComponents.day = 1 + (p + 27 + (p + 6) / 40) % 31;
     easterComponents.month = 3 + (p + 26) / 30;
 
-    NSDate *easter = [[NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian] dateFromComponents:easterComponents];
+    NSDate *easter = [calendar dateFromComponents:easterComponents];
     return easter;
 }
 

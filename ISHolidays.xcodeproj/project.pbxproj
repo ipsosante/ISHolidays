@@ -161,7 +161,7 @@
 		F083F7D81FD1B0A5001F159E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "ipso santé";
 				TargetAttributes = {
 					F083F7DF1FD1B0A5001F159E = {
@@ -176,10 +176,11 @@
 			};
 			buildConfigurationList = F083F7DB1FD1B0A5001F159E /* Build configuration list for PBXProject "ISHolidays" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F083F7D71FD1B0A5001F159E;
 			productRefGroup = F083F7E11FD1B0A5001F159E /* Products */;

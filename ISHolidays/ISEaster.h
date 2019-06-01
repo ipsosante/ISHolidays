@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// and
 ///
 /// http://www.tondering.dk/claus/calendar.html
-+ (NSDate *)easterForYear:(NSInteger)year;
++ (nullable NSDate *)easterForYear:(NSInteger)year inCalendar:(NSCalendar *)calendar;
 
 @end
 

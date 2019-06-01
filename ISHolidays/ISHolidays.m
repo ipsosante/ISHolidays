@@ -47,6 +47,10 @@ NS_ASSUME_NONNULL_END
 
     NSCalendarUnit units = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     NSDateComponents *components = [calendar components:units fromDate:date];
+    if (components == nil) {
+        return nil;
+    }
+
     NSInteger year = components.year;
     NSInteger month = components.month;
     NSInteger day = components.day;
@@ -57,7 +61,10 @@ NS_ASSUME_NONNULL_END
         return @"Nouvel An";
     }
 
-    NSDate *easter = [ISEaster easterForYear:year];
+    NSDate *easter = [ISEaster easterForYear:year inCalendar:calendar];
+    if (easter == nil) {
+        return nil;
+    }
 
     // Easter Monday
     NSInteger monday = 2;
