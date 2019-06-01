@@ -44,6 +44,7 @@
 /* Begin PBXFileReference section */
 		21D3679321E3652B00EF5AC8 /* NSDate+Compare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Compare.h"; sourceTree = "<group>"; };
 		21D3679421E3652B00EF5AC8 /* NSDate+Compare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Compare.m"; sourceTree = "<group>"; };
+		F02DD3E522A340AC00AEFF84 /* ISGregorianCalendarWeekday.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISGregorianCalendarWeekday.h; sourceTree = "<group>"; };
 		F083F7E01FD1B0A5001F159E /* libISHolidays.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libISHolidays.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F083F7E31FD1B0A5001F159E /* ISHolidays.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISHolidays.h; sourceTree = "<group>"; };
 		F083F7E41FD1B0A5001F159E /* ISHolidays.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISHolidays.m; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 				F083F7FC1FD1B49F001F159E /* NSDate+ISHolidays.m */,
 				21D3679321E3652B00EF5AC8 /* NSDate+Compare.h */,
 				21D3679421E3652B00EF5AC8 /* NSDate+Compare.m */,
+				F02DD3E522A340AC00AEFF84 /* ISGregorianCalendarWeekday.h */,
 			);
 			path = ISHolidays;
 			sourceTree = "<group>";
