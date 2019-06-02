@@ -5,7 +5,11 @@
 
 - (BOOL)isEqualToDateExcludingTime:(NSDate *)date
 {
+    NSTimeZone *utcTimezone = [NSTimeZone timeZoneWithName:@"UTC"];
+    NSAssert(utcTimezone != nil, @"Expected UTC timezone not to be nil");
+
     NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = utcTimezone;
     NSCalendarUnit units = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     
     NSDateComponents *date1Components = [calendar components:units fromDate:self];
