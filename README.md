@@ -6,6 +6,12 @@ Holidays calculations for NSDate.
 
 Note that date calculations are done exclusively in the Gregorian Calendar.
 
+Supported countries:
+
+- 🇫🇷 `FR` - France
+- 🇺🇸 `US` - United States (federal holidays only)
+- Add your own! Submit a pull request! ✨
+
 ## Examples
 
 ```objectivec
