@@ -27,3 +27,7 @@ NSLog(@"%d", isHoliday); // YES
 ## Localization
 
 By default, the library uses the user's current locale to define the country for which to calculate the holidays. You can use `+[ISHolidays holidayNameForDate:inLocale:]` if you want to look up a holiday in a different locale (but check if that locale was implemented first, or you'll always get `nil` back).
+
+## Disclaimer
+
+The developers of this library are French. It's difficult to find the correct information for each country holidays, so there may be mistakes. Please read the code for your native country/locale before using this library.

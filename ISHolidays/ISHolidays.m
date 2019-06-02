@@ -2,6 +2,7 @@
 #import "ISHolidays.h"
 
 #import "ISHolidays+FR.h"
+#import "ISHolidays+US.h"
 
 @implementation ISHolidays
 
@@ -15,6 +16,10 @@
     if ([locale.countryCode isEqualToString:@"FR"])
     {
         return [self holidayNameInFranceForDate:date];
+    }
+    else if ([locale.countryCode isEqualToString:@"US"])
+    {
+        return [self holidayNameInUSForDate:date];
     }
 
 #ifndef NDEBUG

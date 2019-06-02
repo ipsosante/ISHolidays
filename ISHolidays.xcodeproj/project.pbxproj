@@ -13,6 +13,8 @@
 		F083F7F51FD1B0C7001F159E /* libISHolidays.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F083F7E01FD1B0A5001F159E /* libISHolidays.a */; };
 		F083F7FD1FD1B49F001F159E /* NSDate+ISHolidays.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F7FC1FD1B49F001F159E /* NSDate+ISHolidays.m */; };
 		F083F8011FD1BCD1001F159E /* ISEaster.m in Sources */ = {isa = PBXBuildFile; fileRef = F083F8001FD1BCD1001F159E /* ISEaster.m */; };
+		F0CC389A22A348CD00CA25E0 /* ISHolidays+US.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CC389922A348CD00CA25E0 /* ISHolidays+US.m */; };
+		F0CC389C22A348D600CA25E0 /* ISHolidaysUSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CC389B22A348D600CA25E0 /* ISHolidaysUSTests.m */; };
 		F0DCC52D1FD5B59400C107A0 /* ISHolidaysFRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DCC52C1FD5B59400C107A0 /* ISHolidaysFRTests.m */; };
 		F0F2F04722A2E64700D09B95 /* ISHolidays+FR.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2F04622A2E64600D09B95 /* ISHolidays+FR.m */; };
 		F0F2F04E22A2EE0200D09B95 /* NSDate+CompareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2F04D22A2EE0200D09B95 /* NSDate+CompareTests.m */; };
@@ -55,6 +57,9 @@
 		F083F7FE1FD1B505001F159E /* ISHolidays.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ISHolidays.xcconfig; sourceTree = "<group>"; };
 		F083F7FF1FD1BCD1001F159E /* ISEaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISEaster.h; sourceTree = "<group>"; };
 		F083F8001FD1BCD1001F159E /* ISEaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISEaster.m; sourceTree = "<group>"; };
+		F0CC389822A348CD00CA25E0 /* ISHolidays+US.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISHolidays+US.h"; sourceTree = "<group>"; };
+		F0CC389922A348CD00CA25E0 /* ISHolidays+US.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ISHolidays+US.m"; sourceTree = "<group>"; };
+		F0CC389B22A348D600CA25E0 /* ISHolidaysUSTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHolidaysUSTests.m; sourceTree = "<group>"; };
 		F0DCC52C1FD5B59400C107A0 /* ISHolidaysFRTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHolidaysFRTests.m; sourceTree = "<group>"; };
 		F0F2F04522A2E64600D09B95 /* ISHolidays+FR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISHolidays+FR.h"; sourceTree = "<group>"; };
 		F0F2F04622A2E64600D09B95 /* ISHolidays+FR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ISHolidays+FR.m"; sourceTree = "<group>"; };
@@ -108,6 +113,8 @@
 				F083F7E41FD1B0A5001F159E /* ISHolidays.m */,
 				F0F2F04522A2E64600D09B95 /* ISHolidays+FR.h */,
 				F0F2F04622A2E64600D09B95 /* ISHolidays+FR.m */,
+				F0CC389822A348CD00CA25E0 /* ISHolidays+US.h */,
+				F0CC389922A348CD00CA25E0 /* ISHolidays+US.m */,
 				F083F7FB1FD1B49F001F159E /* NSDate+ISHolidays.h */,
 				F083F7FC1FD1B49F001F159E /* NSDate+ISHolidays.m */,
 				21D3679321E3652B00EF5AC8 /* NSDate+Compare.h */,
@@ -122,6 +129,7 @@
 			children = (
 				F0F2F04D22A2EE0200D09B95 /* NSDate+CompareTests.m */,
 				F0DCC52C1FD5B59400C107A0 /* ISHolidaysFRTests.m */,
+				F0CC389B22A348D600CA25E0 /* ISHolidaysUSTests.m */,
 				F083F7F41FD1B0C7001F159E /* Info.plist */,
 			);
 			path = ISHolidaysTests;
@@ -220,6 +228,7 @@
 			files = (
 				21D3679521E3652C00EF5AC8 /* NSDate+Compare.m in Sources */,
 				F083F7E51FD1B0A5001F159E /* ISHolidays.m in Sources */,
+				F0CC389A22A348CD00CA25E0 /* ISHolidays+US.m in Sources */,
 				F0F2F04722A2E64700D09B95 /* ISHolidays+FR.m in Sources */,
 				F083F8011FD1BCD1001F159E /* ISEaster.m in Sources */,
 				F083F7FD1FD1B49F001F159E /* NSDate+ISHolidays.m in Sources */,
@@ -232,6 +241,7 @@
 			files = (
 				F0F2F04E22A2EE0200D09B95 /* NSDate+CompareTests.m in Sources */,
 				F0DCC52D1FD5B59400C107A0 /* ISHolidaysFRTests.m in Sources */,
+				F0CC389C22A348D600CA25E0 /* ISHolidaysUSTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
