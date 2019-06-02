@@ -53,7 +53,6 @@
     }];
 }
 
-
 #pragma mark - New Year
 
 - (void)testNewYear2017
@@ -191,9 +190,9 @@
 }
 
 
-#pragma mark - Labour Day
+#pragma mark - Labor Day
 
-- (void)testLabourDay2017
+- (void)testLaborDay2017
 {
     self.dateComponents.year = 2017;
     self.dateComponents.month = 5;
@@ -203,7 +202,7 @@
     XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête du Travail");
 }
 
-- (void)testLabourDay2018
+- (void)testLaborDay2018
 {
     self.dateComponents.year = 2018;
     self.dateComponents.month = 5;
@@ -213,7 +212,7 @@
     XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête du Travail");
 }
 
-- (void)testLabourDay2019
+- (void)testLaborDay2019
 {
     self.dateComponents.year = 2019;
     self.dateComponents.month = 5;
@@ -223,7 +222,7 @@
     XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête du Travail");
 }
 
-- (void)testLabourDay2040
+- (void)testLaborDay2040
 {
     self.dateComponents.year = 2040;
     self.dateComponents.month = 5;
@@ -233,7 +232,7 @@
     XCTAssertEqualObjects([ISHolidays holidayNameForDate:date inLocale:self.locale], @"Fête du Travail");
 }
 
-- (void)testInvalidLabourDay2017
+- (void)testInvalidLaborDay2017
 {
     self.dateComponents.year = 2017;
     self.dateComponents.month = 4;
@@ -243,7 +242,7 @@
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
-- (void)testInvalidLabourDay2018
+- (void)testInvalidLaborDay2018
 {
     self.dateComponents.year = 2018;
     self.dateComponents.month = 5;
@@ -253,7 +252,7 @@
     XCTAssertNil([ISHolidays holidayNameForDate:date inLocale:self.locale]);
 }
 
-- (void)testLabourDayWithTime
+- (void)testLaborDayWithTime
 {
     self.dateComponents.year = 2019;
     self.dateComponents.month = 5;

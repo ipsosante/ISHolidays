@@ -39,7 +39,7 @@
         return @"Lundi de Pâques";
     }
 
-    // Labour day
+    // Labor day
     if (year > 1948 && month == 5 && day == 1)
     {
         return @"Fête du Travail";
