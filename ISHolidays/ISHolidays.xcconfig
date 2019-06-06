@@ -102,7 +102,7 @@ GCC_WARN_PEDANTIC = NO
 // Static Analyzer - Analysis Policy
 CLANG_STATIC_ANALYZER_MODE = shallow
 CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep
-RUN_CLANG_STATIC_ANALYZER = NO  // Right now clang's static analyzer crashes on our sources rdar://51330803
+RUN_CLANG_STATIC_ANALYZER = YES
 
 // Static Analyzer - Generic Issues
 CLANG_ANALYZER_DEADCODE_DEADSTORES = YES
@@ -163,7 +163,6 @@ WAX_ANALYZER_FLAGS = $(inherited) -Xclang -analyzer-checker -Xclang alpha.core.S
 WAX_ANALYZER_FLAGS = $(inherited) -Xclang -analyzer-checker -Xclang alpha.core.StackAddressAsyncEscape
 WAX_ANALYZER_FLAGS = $(inherited) -Xclang -analyzer-checker -Xclang alpha.core.TestAfterDivZero
 WAX_ANALYZER_FLAGS = $(inherited) -Xclang -analyzer-checker -Xclang alpha.cplusplus.DeleteWithNonVirtualDtor
-WAX_ANALYZER_FLAGS = $(inherited) -Xclang -analyzer-checker -Xclang alpha.cplusplus.EnumCastOutOfRange
 WAX_ANALYZER_FLAGS = $(inherited) -Xclang -analyzer-checker -Xclang alpha.cplusplus.InvalidatedIterator
 WAX_ANALYZER_FLAGS = $(inherited) -Xclang -analyzer-checker -Xclang alpha.cplusplus.IteratorRange
 WAX_ANALYZER_FLAGS = $(inherited) -Xclang -analyzer-checker -Xclang alpha.cplusplus.MismatchedIterator
