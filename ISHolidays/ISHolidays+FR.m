@@ -3,6 +3,7 @@
 
 #import "ISEaster.h"
 #import "NSDate+Compare.h"
+#import "ISGregorianCalendarWeekday.h"
 
 @implementation ISHolidays (FR)
 
@@ -32,11 +33,13 @@
     }
 
     // Easter Monday
-    NSInteger monday = 2;
-    NSDate *easterNextMonday = [calendar nextDateAfterDate:easter matchingUnit:NSCalendarUnitWeekday value:monday options:NSCalendarMatchStrictly];
-    if (year > 1886 && [date isEqualToDateExcludingTime:easterNextMonday])
-    {
-        return @"Lundi de Pâques";
+    if (year > 1886) {
+        NSDate *easterNextMonday = [calendar nextDateAfterDate:easter matchingUnit:NSCalendarUnitWeekday value:ISGregorianCalendarWeekdayMonday options:NSCalendarMatchStrictly];
+        if (easterNextMonday != nil && [date isEqualToDateExcludingTime:easterNextMonday])
+
+        {
+            return @"Lundi de Pâques";
+        }
     }
 
     // Labor day
@@ -52,17 +55,21 @@
     }
 
     // Feast of the Ascension
-    NSDate *ascension = [calendar dateByAddingUnit:NSCalendarUnitDay value:39 toDate:easter options:0];
-    if (year >= 1802 && [date isEqualToDateExcludingTime:ascension])
-    {
-        return @"Jeudi de l'Ascension";
+    if (year >= 1802) {
+        NSDate *ascension = [calendar dateByAddingUnit:NSCalendarUnitDay value:39 toDate:easter options:0];
+        if (ascension != nil && [date isEqualToDateExcludingTime:ascension])
+        {
+            return @"Jeudi de l'Ascension";
+        }
     }
-
+    
     // Whit Monday (Pentecost Monday)
-    NSDate *pentecost = [calendar dateByAddingUnit:NSCalendarUnitDay value:50 toDate:easter options:0];
-    if (year > 1886 && [date isEqualToDateExcludingTime:pentecost])
-    {
-        return @"Lundi de Pentecôte";
+    if (year > 1886) {
+        NSDate *pentecost = [calendar dateByAddingUnit:NSCalendarUnitDay value:50 toDate:easter options:0];
+        if (pentecost != nil && [date isEqualToDateExcludingTime:pentecost])
+        {
+            return @"Lundi de Pentecôte";
+        }
     }
 
     // Bastille Day ("fête nationale française")
