@@ -50,22 +50,56 @@
     XCTAssertTrue([left isEqualToDateExcludingTime:right]);
 }
 
-// While the date appears to be equal, the timezone shift results in a day change.
-- (void)testSameDateDifferentTimezoneNotEqual
+// While the dates appears to be equal, the timezone shift results in a day change in UTC.
+- (void)testSameDateDifferentTimezoneNotEqualInUTC
 {
     NSDate *left = [self.isoDateFormatter dateFromString:@"1970-01-01T00:00:00+00:00"];
     NSDate *right = [self.isoDateFormatter dateFromString:@"1970-01-01T00:00:00+01:00"]; // 1969-12-31T23:00:00+00:00
 
-    XCTAssertFalse([left isEqualToDateExcludingTime:right]);
+    NSTimeZone *utcTimezone = [NSTimeZone timeZoneWithName:@"UTC"];
+    NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = utcTimezone;
+
+    XCTAssertFalse([left isEqualToDateExcludingTime:right inCalendar:calendar]);
 }
 
-// While the date appears to be equal, the timezone shift results in a day change.
-- (void)testSameDateWildlyDifferentTimezoneNotEqual
+// While this comparison fails in UTC, it returns YES in Europe/Paris, because this timezone is always at least UTC+01:00.
+- (void)testSameDateDifferentTimezoneEqualInParis
+{
+    NSDate *left = [self.isoDateFormatter dateFromString:@"1970-01-01T00:00:00+00:00"];
+    NSDate *right = [self.isoDateFormatter dateFromString:@"1970-01-01T00:00:00+01:00"];
+
+    NSTimeZone *utcTimezone = [NSTimeZone timeZoneWithName:@"Europe/Paris"];
+    NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = utcTimezone;
+
+    XCTAssertTrue([left isEqualToDateExcludingTime:right inCalendar:calendar]);
+}
+
+// While the dates appears to be equal, the timezone shift results in a day change in UTC.
+- (void)testSameDateWildlyDifferentTimezoneNotEqualInUTC
 {
     NSDate *left = [self.isoDateFormatter dateFromString:@"1970-01-01T00:00:00+00:00"];
     NSDate *right = [self.isoDateFormatter dateFromString:@"1970-01-01T00:00:00+12:00"]; // 1969-12-31T12:00:00+00:00
 
-    XCTAssertFalse([left isEqualToDateExcludingTime:right]);
+    NSTimeZone *utcTimezone = [NSTimeZone timeZoneWithName:@"UTC"];
+    NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = utcTimezone;
+
+    XCTAssertFalse([left isEqualToDateExcludingTime:right inCalendar:calendar]);
+}
+
+// While the dates appears to be equal, the timezone shift results in a day change in Paris.
+- (void)testSameDateWildlyDifferentTimezoneNotEqualInParis
+{
+    NSDate *left = [self.isoDateFormatter dateFromString:@"1970-01-01T00:00:00+00:00"];
+    NSDate *right = [self.isoDateFormatter dateFromString:@"1970-01-01T00:00:00+12:00"]; // 1969-12-31T12:00:00+00:00
+
+    NSTimeZone *utcTimezone = [NSTimeZone timeZoneWithName:@"Europe/Paris"];
+    NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = utcTimezone;
+
+    XCTAssertFalse([left isEqualToDateExcludingTime:right inCalendar:calendar]);
 }
 
 - (void)testSameDateDifferentTimezone
