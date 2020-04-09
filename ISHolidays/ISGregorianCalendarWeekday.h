@@ -10,5 +10,5 @@ typedef NS_ENUM(NSInteger, ISGregorianCalendarWeekday) {
     ISGregorianCalendarWeekdayThursday,
     ISGregorianCalendarWeekdayFriday,
     ISGregorianCalendarWeekdaySaturday
-};
+} NS_SWIFT_NAME(GregorianCalendarWeekday);
 NS_ASSUME_NONNULL_END

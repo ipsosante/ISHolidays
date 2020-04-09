@@ -9,6 +9,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// This class offers a generic easter computing method for any given year
+NS_SWIFT_NAME(Easter)
 @interface ISEaster : NSObject
 
 /// Calculate the easter date for the passed `year`.
